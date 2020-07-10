@@ -1,7 +1,7 @@
 {
   "name": "@capaj/react-google-maps-api",
   "sideEffects": false,
-  "version": "1.9.7",
+  "version": "1.9.8",
   "description": "React.js Google Maps API integration",
   "license": "MIT",
   "author": {
@@ -85,7 +85,7 @@
   },
   "dependencies": {
     "@react-google-maps/infobox": "1.9.6",
-    "@capaj/react-google-maps-marker-clusterer": "1.9.6",
+    "@capaj/react-google-maps-marker-clusterer": "1.9.7",
     "acorn": "7.3.1",
     "acorn-jsx": "^5.2.0",
     "invariant": "2.2.4"
