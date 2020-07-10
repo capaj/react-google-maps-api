@@ -1,3 +1,5 @@
+import { Clusterer } from './Clusterer'
+
 /* globals google */
 export interface ClusterIconInfo {
   text: string
@@ -28,7 +30,7 @@ export interface ClustererOptions {
   imagePath?: string
   imageExtension?: string
   imageSizes?: number[]
-  imageUrl?: () => string
+  imageUrl?: (i?: number, clusterer?: Clusterer) => string
 }
 
 export interface ClusterIconStyle {

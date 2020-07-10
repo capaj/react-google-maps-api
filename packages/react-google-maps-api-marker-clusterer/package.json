@@ -1,7 +1,7 @@
 {
   "name": "@capaj/react-google-maps-marker-clusterer",
   "sideEffects": false,
-  "version": "1.9.6",
+  "version": "1.9.7",
   "description": "Marker Clusterer for React.js Google Maps API",
   "license": "MIT",
   "author": {

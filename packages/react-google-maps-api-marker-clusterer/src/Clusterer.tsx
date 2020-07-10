@@ -70,7 +70,7 @@ export class Clusterer {
   imagePath?: string
   imageExtension?: string
   imageSizes: number[]
-  imageUrl?: (i: number) => string
+  imageUrl?: (i?: number, clusterer?: Clusterer) => string
   calculator: TCalculator
   batchSize: number
   batchSizeIE: number
@@ -236,7 +236,7 @@ export class Clusterer {
 
     for (let i = 0; i < this.imageSizes.length; i++) {
       const url = this.imageUrl
-        ? this.imageUrl(i)
+        ? this.imageUrl(i, this)
         : (this.imagePath as string) + (i + 1) + '.' + this.imageExtension
 
       this.styles.push({
