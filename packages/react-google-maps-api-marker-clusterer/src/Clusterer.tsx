@@ -67,9 +67,10 @@ export class Clusterer {
   averageCenter: boolean
   ignoreHidden: boolean
   enableRetinaIcons: boolean
-  imagePath: string
-  imageExtension: string
+  imagePath?: string
+  imageExtension?: string
   imageSizes: number[]
+  imageUrl?: (i: number) => string
   calculator: TCalculator
   batchSize: number
   batchSizeIE: number
@@ -123,6 +124,7 @@ export class Clusterer {
     this.imageExtension = optOptions.imageExtension || IMAGE_EXTENSION
 
     this.imageSizes = optOptions.imageSizes || IMAGE_SIZES
+    this.imageUrl = optOptions.imageUrl
 
     this.calculator = optOptions.calculator || CALCULATOR
 
@@ -233,8 +235,12 @@ export class Clusterer {
     }
 
     for (let i = 0; i < this.imageSizes.length; i++) {
+      const url = this.imageUrl
+        ? this.imageUrl(i)
+        : (this.imagePath as string) + (i + 1) + '.' + this.imageExtension
+
       this.styles.push({
-        url: this.imagePath + (i + 1) + '.' + this.imageExtension,
+        url,
         height: this.imageSizes[i],
         width: this.imageSizes[i],
       })
@@ -330,7 +336,7 @@ export class Clusterer {
     this.enableRetinaIcons = enableRetinaIcons
   }
 
-  getImageExtension(): string {
+  getImageExtension() {
     return this.imageExtension
   }
 
@@ -338,7 +344,7 @@ export class Clusterer {
     this.imageExtension = imageExtension
   }
 
-  getImagePath(): string {
+  getImagePath() {
     return this.imagePath
   }
 

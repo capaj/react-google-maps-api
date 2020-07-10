@@ -28,6 +28,7 @@ export interface ClustererOptions {
   imagePath?: string
   imageExtension?: string
   imageSizes?: number[]
+  imageUrl?: () => string
 }
 
 export interface ClusterIconStyle {
