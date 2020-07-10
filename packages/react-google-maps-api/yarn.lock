@@ -844,6 +844,11 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@capaj/react-google-maps-marker-clusterer@1.9.6":
+  version "1.9.6"
+  resolved "https://registry.yarnpkg.com/@capaj/react-google-maps-marker-clusterer/-/react-google-maps-marker-clusterer-1.9.6.tgz#bb2539e03f6e4124949956c2f04c69ed510d103a"
+  integrity sha512-wrbm6+A8mpB0jquAjfuh7DwXGAV3NJz0iouF/KG5vY5uHFCjAqgfT/pFpNir1SELW8TQQZFeyrkQnISMJKdW2w==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.3.tgz#099139eaec7ebf07a27c1786a3ff64f39464d2ef"
@@ -1223,11 +1228,6 @@
   version "1.9.6"
   resolved "https://registry.yarnpkg.com/@react-google-maps/infobox/-/infobox-1.9.6.tgz#02b894c7c10c0f5567184b54ff5b307eb1704c2c"
   integrity sha512-fR+zAC673BijGd9IJuV8sD0zEy1cLddxgyrT/SHFlNRPsnyprbH5Ox4zmfNU6UTkrQ7ULedFK7hUrgLVYKpc+Q==
-
-"@react-google-maps/marker-clusterer@1.9.6":
-  version "1.9.6"
-  resolved "https://registry.yarnpkg.com/@react-google-maps/marker-clusterer/-/marker-clusterer-1.9.6.tgz#30087efc2594d85ffb4c6b2ccf709ad5d3590c29"
-  integrity sha512-bliu3CfMWLxMJaW8UK7+6Q1iPQoXbP9BK14yvid2pZL+OgqKgmnY6O9pazIi5Ca9NVTviNcN8WCz1TicUiABQw==
 
 "@rollup/plugin-commonjs@^11.0.0":
   version "11.0.1"

@@ -11,7 +11,7 @@ import {
   Cluster,
   ClustererOptions,
   TCalculator,
-} from '@react-google-maps/marker-clusterer'
+} from '@capaj/react-google-maps-marker-clusterer'
 
 const eventMap = {
   onClick: 'click',
