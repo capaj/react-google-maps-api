@@ -74,6 +74,19 @@ const updaterMap = {
     instance.setStyles(styles)
   },
 
+  imageUrl(instance: Clusterer, imageUrl: (i: number, clusterer: Clusterer) => string): void {
+    const styles = instance.getStyles()
+
+    instance.setStyles(
+      styles.map((clusterStyles, i) => {
+        return {
+          ...clusterStyles,
+          url: imageUrl(i, instance),
+        }
+      })
+    )
+  },
+
   title(instance: Clusterer, title: string): void {
     instance.setTitle(title)
   },
@@ -112,6 +125,8 @@ export interface ClustererProps {
   imagePath?: string
   /** An array of numbers containing the widths of the group of imagePath.imageExtension image files. (The images are assumed to be square.) The default value is MarkerClusterer.IMAGE_SIZES. */
   imageSizes?: number[]
+  /** function which generates the svg icon name for the clusterer */
+  imageUrl?: (i: number, clusterer: Clusterer) => string
   /** The maximum zoom level at which clustering is enabled or null if clustering is to be enabled at all zoom levels. The default value is null. */
   maxZoom?: number
   /** The minimum number of markers needed in a cluster before the markers are hidden and a cluster marker appears. The default value is 2. */
@@ -174,16 +189,33 @@ export class ClustererComponent extends React.PureComponent<ClustererProps, Clus
   }
 
   componentDidUpdate(prevProps: ClustererProps): void {
-    if (this.state.markerClusterer) {
+    const { props, state } = this
+
+    if (state.markerClusterer) {
+      const { markerClusterer } = state
       unregisterEvents(this.registeredEvents)
 
       this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
         updaterMap,
         eventMap,
         prevProps,
-        nextProps: this.props,
-        instance: this.state.markerClusterer,
+        nextProps: props,
+        instance: markerClusterer,
       })
+      const imageUrl = props.options?.imageUrl
+      if (typeof imageUrl === 'function') {
+        const styles = markerClusterer.getStyles()
+
+        markerClusterer.setStyles(
+          styles.map((clusterStyles, i) => {
+            return {
+              ...clusterStyles,
+              //@ts-ignore
+              url: imageUrl(i, markerClusterer),
+            }
+          })
+        )
+      }
     }
   }
 
