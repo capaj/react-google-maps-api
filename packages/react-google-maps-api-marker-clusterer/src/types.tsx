@@ -30,7 +30,7 @@ export interface ClustererOptions {
   imagePath?: string
   imageExtension?: string
   imageSizes?: number[]
-  imageUrl?: (i?: number, clusterer?: Clusterer) => string
+  imageUrl?: (i: number, clusterer: Clusterer) => string
 }
 
 export interface ClusterIconStyle {
